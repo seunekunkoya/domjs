@@ -21,15 +21,19 @@ function createListElement(){
     //console.log(input.value);
 }
 
-//add event listener to the Button
-button.addEventListener("click", function(){
+function addListAfterClick() {
     if (inputLength() > 0) {
       createListElement();
-  }
-})
+    }
+}
 
-input.addEventListener("keypress", function(event){
+function addListAfterKeypress(event){
   if (inputLength() > 0 && event.keyCode === 13) {
     createListElement();
   }
-})
+}
+
+//add event listener to the Button
+button.addEventListener("click", addListAfterClick);
+
+input.addEventListener("keypress", addListAfterKeypress);
